@@ -68,6 +68,7 @@ const Register = () => {
       {success && <p style={{ color: "green" }}>{success}</p>}
 
       <form onSubmit={handleSubmit}>
+         <div className="col-sm-50 ">
         <input
           type="text"
           name="username"
@@ -104,7 +105,8 @@ const Register = () => {
           required
         />
         <br />
-        <button type="submit">Register</button>
+        <button className='btn btn-primary' type="submit">Register</button>
+        </div>
       </form>
     </div>
   );
