@@ -49,12 +49,13 @@ const Register = () => {
       }
 
       setSuccess("Registration successful! You can now log in.");
-      setFormData({
-        username: "",
-        email: "",
-        password: "",
-        password2: "",
-      });
+      navigate("/");
+      // setFormData({
+      //   username: "",
+      //   email: "",
+      //   password: "",
+      //   password2: "",
+      // });
     } catch (err) {
       setError("Network error. Please try again.");
     }
@@ -62,14 +63,14 @@ const Register = () => {
 
   return (
     <div style={{ maxWidth: "400px", margin: "40px auto" }}>
-      <h2>Register</h2>
-
       {error && <p style={{ color: "red" }}>{error}</p>}
       {success && <p style={{ color: "green" }}>{success}</p>}
-
-      <form onSubmit={handleSubmit}>
-         <div className='mt-5'>
+      <form onSubmit={handleSubmit} className="register-form ">
+        
+        <h4>Create a new account</h4>
+         
          <div className="col-sm-50 ">
+          
         <input
           type="text"
           name="username"
@@ -78,7 +79,6 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <br />
         <input
           type="email"
           name="email"
@@ -87,7 +87,6 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <br />
         <input
           type="password"
           name="password"
@@ -96,7 +95,6 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <br />
         <input
           type="password"
           name="password2"
@@ -105,10 +103,9 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <br />
         <button className='btn btn-primary' type="submit">Register</button>
         </div>
-        </div>
+        
       </form>
     </div>
   );
