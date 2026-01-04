@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Header'
-import Products from './ProductsList'
+import Products from './Products'
 
 const Home = () => {
   return (

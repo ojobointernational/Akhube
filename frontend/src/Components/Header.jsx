@@ -9,7 +9,7 @@ const Header = () => {
         {
           localStorage.getItem("accessToken") ?
           <>
-          <Link to="/product">Product</Link>
+          <Link to="/products-list">Product</Link>
           <Link to="/">Home</Link>
            <Link to="/add-product">Add Product</Link>
           <Link to="/update-product">Update Product</Link>
