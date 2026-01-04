@@ -45,9 +45,9 @@ const login = async () => {
   return (
     <div className='mt-5'>
     <Header />
-    <div className ="mt-5"><b>Enter Username and Password</b></div>
+    <div className ="mt-5"><b>Enter Email and Password</b></div>
     <div className="col-sm-50 ">
-    <input type="text" placeholder='username' onChange={((e)=>setUsername(e.target.value))} className ="form-control" />
+    <input type="text" placeholder='email' onChange={((e)=>setUsername(e.target.value))} className ="form-control" />
     <br />
     <input type="password" placeholder='password' onChange={((e)=>setPassword(e.target.value))} className ="form-control" />
     <br />
