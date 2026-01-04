@@ -68,6 +68,7 @@ const Register = () => {
       {success && <p style={{ color: "green" }}>{success}</p>}
 
       <form onSubmit={handleSubmit}>
+         <div className='mt-5'>
          <div className="col-sm-50 ">
         <input
           type="text"
@@ -106,6 +107,7 @@ const Register = () => {
         />
         <br />
         <button className='btn btn-primary' type="submit">Register</button>
+        </div>
         </div>
       </form>
     </div>
