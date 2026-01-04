@@ -1,10 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -13,49 +9,63 @@ const Register = () => {
   });
 
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (formData.password !== formData.password2) {
-      setError("Passwords do not match");
-      return;
-    }
-
-    setLoading(true);
     setError("");
+    setSuccess("");
 
     try {
-      await axios.post(
+      const response = await fetch(
         `${import.meta.env.VITE_SERVER_BASE_URL}/register/`,
         {
-          username: formData.username,
-          email: formData.email,
-          password: formData.password,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         }
       );
 
-      alert("Registration successful");
-      navigate("/login");
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Django serializer errors
+        if (typeof data === "object") {
+          const firstError = Object.values(data)[0];
+          setError(Array.isArray(firstError) ? firstError[0] : "Registration failed");
+        } else {
+          setError("Registration failed");
+        }
+        return;
+      }
+
+      setSuccess("Registration successful! You can now log in.");
+      setFormData({
+        username: "",
+        email: "",
+        password: "",
+        password2: "",
+      });
     } catch (err) {
-      setError(
-        err.response?.data?.error || "Registration failed"
-      );
-    } finally {
-      setLoading(false);
+      setError("Network error. Please try again.");
     }
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "auto" }}>
-      <h2>Create Account</h2>
+    <div style={{ maxWidth: "400px", margin: "40px auto" }}>
+      <h2>Register</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p style={{ color: "green" }}>{success}</p>}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -94,9 +104,7 @@ const Register = () => {
           required
         />
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Registering..." : "Register"}
-        </button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
