@@ -49,9 +49,11 @@ const Register = () => {
         }
         return;
       }
-      navigate("/");
-      setSuccess("Registration successful! You can now log in.");
       
+      setSuccess("Registration successful! You can now log in.");
+      setTimeout(() => {
+      navigate("/login");
+    }, 1500);
       // setFormData({
       //   username: "",
       //   email: "",
