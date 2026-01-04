@@ -76,7 +76,7 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-
+        <br />
         <input
           type="email"
           name="email"
@@ -85,7 +85,7 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-
+        <br />
         <input
           type="password"
           name="password"
@@ -94,7 +94,7 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-
+        <br />
         <input
           type="password"
           name="password2"
@@ -103,7 +103,7 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-
+        <br />
         <button type="submit">Register</button>
       </form>
     </div>
