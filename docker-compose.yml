@@ -21,8 +21,8 @@ services:
       - ./backend-drf/media:/app/media
     command: >
       sh -c "python manage.py collectstatic --noinput &&
-             python manage.py migrate &&
-             gunicorn clickmart_main.wsgi:application --bind 0.0.0.0:8000"
+           python manage.py migrate &&
+           gunicorn clickmart_main.wsgi:application --bind 0.0.0.0:8000"
 
   frontend:
     build:
