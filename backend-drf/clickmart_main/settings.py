@@ -31,7 +31,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG', default =True, cast = bool )
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "akhube.online,www.akhube.online").split(",")
 
 
 
@@ -140,6 +140,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+
 STATIC_URL = "static/"
 STATIC_ROOT =BASE_DIR /'static'
 STATICFILES_DIRS =[
@@ -166,8 +167,9 @@ SIMPLE_JWT ={
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7)
 }
 
+
 MEDIA_URL="/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / "media"
 #MEDIA_ROOT = BASE_DIR / "media"
 
 
@@ -184,4 +186,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://172.105.34.207:5173",
     "http://akhube.online",
     "https://akhube.online"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://akhube.online",
+    "https://akhube.online",
+    "http://www.akhube.online",
+    "https://www.akhube.online",
 ]
