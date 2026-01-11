@@ -24,7 +24,7 @@ const Checkout = () => {
 
     try {
       const response = await fetch(
-        "http://172.105.34.207:8000/api/v1/orders/place/",
+        "http://akhube.online/api/v1/orders/place/",
         {
           method: "POST",
           headers: {

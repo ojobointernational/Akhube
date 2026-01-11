@@ -8,7 +8,7 @@ const Products = () => {
   const [loading, setLoading] = useState(true);
 
   // API URL
-  const API_URL = 'http://172.105.34.207:8000/api/v1/products/'; // replace with your endpoint
+  const API_URL = 'http://akhube.online/api/v1/products/'; // replace with your endpoint
 
   useEffect(() => {
     const fetchProducts = async () => {

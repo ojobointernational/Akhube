@@ -6,7 +6,7 @@ const Cart = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  const API_URL = "http://172.105.34.207:8000/api/v1/cart/";
+  const API_URL = "http://akhube.online/api/v1/cart/";
 
   useEffect(() => {
     const fetchCart = async () => {

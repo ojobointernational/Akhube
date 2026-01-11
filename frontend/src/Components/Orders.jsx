@@ -11,7 +11,7 @@ const Orders = () => {
 
       try {
         const response = await fetch(
-          "http://172.105.34.207:8000/api/v1/orders/",
+          "http://akhube.online/api/v1/orders/",
           {
             headers: {
               Authorization: `Bearer ${token}`,

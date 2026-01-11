@@ -43,7 +43,7 @@ const addToCart = async () => {
 
   try {
     const response = await fetch(
-      "http://172.105.34.207:8000/api/v1/cart/add/",
+      "http://akhube.online/api/v1/cart/add/",
       {
         method: "POST",
         headers: {
