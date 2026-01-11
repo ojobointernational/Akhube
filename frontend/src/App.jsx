@@ -15,6 +15,7 @@ import Cart from './Components/Cart.jsx'
 import Checkout from './Components/Checkout.jsx'
 import OrderSuccess from './Components/OrderSuccess.jsx'
 import Orders from './Components/Orders.jsx'
+import OrderDetail from './Components/OrderDetail.jsx'
 
 
 function App() {
