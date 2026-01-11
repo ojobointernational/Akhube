@@ -24,7 +24,7 @@ const Checkout = () => {
 
     try {
       const response = await fetch(
-        "http://akhube.online/api/v1/orders/place/",
+        "/api/v1/orders/place/",
         {
           method: "POST",
           headers: {

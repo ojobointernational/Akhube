@@ -16,7 +16,7 @@ const Login = () => {
 
 const login = async () => {
  try{
-  const response =await fetch('http://akhube.online/api/v1/token/',{
+  const response =await fetch('/api/v1/token/',{
     method:'POST',
     headers:{
       "Content-Type":"application/json",

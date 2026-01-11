@@ -10,7 +10,7 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  const API_URL = `http://172.105.34.207:8000/api/v1/products/${id}/`;
+  const API_URL = `/api/v1/products/${id}/`;
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -43,7 +43,7 @@ const addToCart = async () => {
 
   try {
     const response = await fetch(
-      "http://akhube.online/api/v1/cart/add/",
+      "/api/v1/cart/add/",
       {
         method: "POST",
         headers: {
