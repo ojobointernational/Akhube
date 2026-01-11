@@ -15,7 +15,7 @@ import Cart from './Components/Cart.jsx'
 import Checkout from './Components/Checkout.jsx'
 import OrderSuccess from './Components/OrderSuccess.jsx'
 import Orders from './Components/Orders.jsx'
-import OrderDetail from './Components/OrderDetail.jsx'
+import OrderDetails from './Components/OrderDetails.jsx'
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/products-list" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/order/success/:id" element={<OrderSuccess />} />
-           <Route path="/orders/:id" element={<OrderDetail />} />
+           <Route path="/orders/:id" element={<OrderDetails />} />
           <Route path="orders" element={<Orders />} />
           <Route path="/cart" element={<Cart />} />
 

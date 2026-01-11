@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const OrderDetail = () => {
+const OrderDetails = () => {
   const { id } = useParams();
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -44,4 +44,4 @@ const OrderDetail = () => {
   );
 };
 
-export default OrderDetail;
+export default OrderDetails;
