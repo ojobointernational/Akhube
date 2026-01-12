@@ -41,7 +41,7 @@ const Products = () => {
           style={{ width: "18rem", margin: "1rem", display: "inline-block" }}
         >
           <img
-            src={`/static/${product.image}`}
+            src={product.image}
             alt={product.name}
             className="card-img-top"
             style={{ height: "200px", objectFit: "cover" }}
