@@ -31,8 +31,13 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config('DEBUG', default =True, cast = bool )
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "akhube.online,www.akhube.online").split(",")
-
+#ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "akhube.online,www.akhube.online").split(",")
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "akhube.online",
+    "www.akhube.online",
+]
 
 
 # Application definition
