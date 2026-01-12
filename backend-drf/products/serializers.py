@@ -46,6 +46,6 @@ class ProductSerializer(serializers.ModelSerializer):
     def get_image(self, obj):
         if obj.image:  # obj.image is filename like 'apple.jpeg'
             # Build URL relative to STATIC_URL
-            return f"{settings.STATIC_URL}/{obj.image}"
+             return f"{settings.MEDIA_URL}{obj.image}"
         return None
 
