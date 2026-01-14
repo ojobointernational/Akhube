@@ -37,6 +37,8 @@ ALLOWED_HOSTS = os.getenv(
 ).split(",")
 
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
 
 INSTALLED_APPS = [
