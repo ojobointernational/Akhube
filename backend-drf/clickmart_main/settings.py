@@ -39,6 +39,17 @@ ALLOWED_HOSTS = os.getenv(
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://akhube.online",
+    "https://www.akhube.online",
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
